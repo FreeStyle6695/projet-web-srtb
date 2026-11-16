@@ -1,4 +1,5 @@
 :root, :root[data-theme="light"] {
+    color-scheme: light;
     --bg: #FAF9F7;
     --texte: #1C1D1F;
     --texte-2: #555860;
@@ -6,10 +7,11 @@
     --accent-texte: #FFFFFF;
     --detail: #C5A658;
     --fresh-link: #ba1116;
-    --visited-lik:#364552;
+    --visited-link:#364552;
     --hover-link: #8a0c10;
 }
 :root[data-theme="dark"] {
+    color-scheme: dark;
     --bg: #1C1D1F;
     --texte: #94979A;
     --texte-2: #84878A;
@@ -17,85 +19,77 @@
     --accent-texte: #FFFFFF;
     --detail: #C5A658;
     --fresh-link: #c5a658;
-    --visited-lik:#8fa6b8;
+    --visited-link:#8fa6b8;
     --hover-link: #e3c677;
 }
-
-
-
-
-
-.switch {
-    position: relative;
-    width: 52px;
-    height: 30px;
-    padding: 0;
-    border: none;
-    border-radius: 999px;
-    background: var(--texte-2);
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.switch::after {
-    content: "";
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: #FFFFFF;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
-    transition: transform 0.3s ease;
-}
-
-.switch[aria-checked="true"] {
-    background: var(--detail);
-}
-
-.switch[aria-checked="true"]::after {
-    transform: translateX(22px);
-}
-
-.switch:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 3px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .switch, .switch::after { transition: none; }
-}
-
-
-
-
-
 @font-face {
     font-family: 'Oswald';
     src: url('../../fonts/Oswald-Regular.woff2') format('woff2');
+    font-display: swap;
 }
 @font-face {
     font-family: 'Special Elite';
     src: url('../../fonts/SpecialElite-Regular.woff2') format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Black Ops One';
+    src: url('../../fonts/BlackOpsOne-Regular.woff2') format('woff2');
+    font-display: swap;
 }
 *{
     margin : 0px;
     padding : 0px;
-    font-family: 'Oswald';
 }
 body{
-    margin: 10px;
-    padding: 10px;
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0.625rem;
+    min-height: 100dvh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     background-color: var(--bg);
     color: var(--texte);
     transition: background-color 0.3s ease, color 0.3s ease;
+    font-synthesis: none; /*évite le faux gras et faux italique*/
 }
-#theme-toggle, #son-toggle{
-    width: 6rem;
+.evitement{
+    position: absolute;
+    left: -999px;
 }
-h1, h2, h3, h4, h5, h6, a, button{
-    font-family: 'Special Elite';
+.evitement:focus{
+    left: 0.75rem;
+    top: 0.75rem;
+    z-index: 100;
+    padding: 0.5rem;
+    background: var(--texte);
+    color: var(--bg);
+    transform: none;
+}
+.logo{
+    display: block;
+    margin: 0.625rem 0 0 1.25rem;
+    max-width: 100%;
+    height: auto;
+}
+.link-logo:hover, .link-logo:focus-visible{
+    transform: none;
+}
+.reglages{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    padding: 0.5rem 0;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Special Elite', cursive;
+    font-weight: normal;
+    text-decoration: underline dotted;
+    text-decoration-thickness: 0.15em;
+    text-underline-offset: 0.15em;
+    letter-spacing: 0.05em;
 }
 nav{
     width: 100%;
@@ -106,13 +100,72 @@ nav{
     background-position: left 0% top 25%;
     background-repeat: no-repeat;
 }
+main{
+    flex: 1;
+}
 footer{
-    position: fixed;
-    bottom: 10px;
-    width: fit-content;
+    border-top: 0.2rem solid var(--detail);
+    margin-top: 1.5rem;
+    padding: 1rem 1rem calc(1rem + env(safe-area-inset-bottom, 0px));
+    line-height: 1.3;
+}
+.footer-grille{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+.footer-bloc h2{
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+.footer-bloc p + p{
+     margin-top: 0.5rem;
+}
+.footer-bloc ul{
+    list-style: none;
+}
+.footer-bloc address{
+    font-style: normal;
+}
+.footer-bloc a{
+    transform-origin: left center;
+    padding: 0.1rem 0;
+    font-size: 0.95rem;
+}
+.footer-bloc a i{
+    display: inline-block;
+    width: 1.5em;
+    margin-right: 0.4em;
     text-align: center;
 }
+.footer-bas{
+    max-width: 70rem;
+    margin: 1.5rem auto 0;
+    padding-top: 1rem;
+    border-top: 0.0625rem solid var(--texte-2);
+    text-align: center;
+    font-size: 0.9rem;
+}
+.footer-bas p + p{
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+}
+.liste-ligne{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.1rem 1rem;
+}
+.infos-legales{
+    font-size: 0.9rem;
+}
+.etiquette{
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 0.9rem;
+}
 a{
+    font-family: 'Black Ops One', sans-serif;
     color: var(--fresh-link);
     text-decoration: underline;
     text-underline-offset: 3px;
@@ -120,7 +173,7 @@ a{
     transition: transform 0.5s ease;
 }
 a:visited{
-    color: var(--visited-lik);
+    color: var(--visited-link);
 }
 a:hover, a:focus-visible{
     color: var(--hover-link);
@@ -130,23 +183,121 @@ a:hover, a:focus-visible{
 a:active{
     color: var(--hover-link);
 }
-.link-logo{
-    margin: 10px 0px 0px 20px;
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
 }
-.link-logo:hover, .logo-lien:focus-visible{
-    transform: none;
+
+
+
+
+
+
+
+@media (max-width: 599px){
+    .footer-bloc a:hover, .footer-bloc a:focus-visible{
+        transform: none;
+    }
 }
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
+@media (min-width: 600px){
+    .footer-grille{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-bas{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    .footer-bas p + p{
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .footer-bas p:first-child{
+        text-align: left;
+    }
+    .footer-bas p:last-child{
+        text-align: right;
+    }
+}
+@media (min-width: 600px) and (max-width: 1199px){
+    .footer-bloc:nth-child(3){
+        order: 1;
+    }
+}
+@media (min-width: 1200px){
+    .footer-grille{
+        grid-template-columns: 1fr 1.3fr 0.8fr 1fr;
+        gap: 2.5rem;
+        align-items: start;
+    }
+}
+@media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+        color-scheme: dark;
         --bg: #1C1D1F;
         --texte: #94979A;
         --texte-2: #84878A;
         --accent: #BA1116;
         --accent-texte: #FFFFFF;
         --detail: #C5A658;
+        --fresh-link: #c5a658;
+        --visited-link: #8fa6b8;
+        --hover-link: #e3c677;
     }
 }
+
+/* Pour les boutons fun de la page d'accueil */
+.switch{
+    position: relative;
+    width: 3.25rem;
+    height: 1.875rem;
+    padding: 0;
+    border: none;
+    border-radius: 999px;
+    background: var(--texte-2);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.switch::after{
+    content: "";
+    position: absolute;
+    top: 0.1875rem;
+    left: 0.1875rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease;
+}
+.switch[aria-checked="true"] {
+    background: var(--detail);
+}
+.switch[aria-checked="true"]::after{
+    transform: translateX(1.375rem);
+}
+.switch:focus-visible {
+    outline: 0.125rem solid var(--fresh-link);
+    outline-offset: 0.1875rem;
+}
 @media (prefers-reduced-motion: reduce) {
-    a { transition: none; }
-    a:hover, a:focus-visible { transform: none; }
+    body{
+        transition: none;
+    }
+    a{
+        transition: none;
+    }
+    a:hover, a:focus-visible{
+        transform: none;
+    }
+    .switch, .switch::after{
+        transition: none;
+    }
 }

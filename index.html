@@ -2,88 +2,116 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, viewport-fit=cover">   <!--l'utilisateur ne peut pas zoomer, la page s'adapte à la "forme" de l'écran-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">   <!--la page s'adapte à la "forme" de l'écran-->
         <meta name="author" content="Maxence DELCOURTE">    <!--l'auteur de la page-->
-        <meta name="keywords" content="">   <!--ce que contient la page-->
-        <meta name="description" content="">    <!--Description de la page HTML-->
+        <meta name="keywords" content="club de tir, tir sportif, Société Royale Tir de Beloeil, SRTB, Quevaucamps, Hainaut, Tournai, URSTB-f">   <!--ce que contient la page-->
+        <meta name="description" content="Stand de tir de Beloeil à Quevaucamps : tir sportif ouvert à tous, dès le plus jeune âge, avec des moniteurs brevetés. Horaires, essai, inscription et contact.">    <!--Description de la page HTML-->
         <meta name="copyright" content="©Maxence DELCOURTE™">   <!--c'est ma page et celle de personne d'autre :@-->
         <meta name="robots" content="index, follow">    <!--référencer la page + suivre les liens-->
         <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-*******************'; connect-src 'self' ws://127.0.0.1:5500 ws://localhost:5500; img-src 'self'; style-src 'self';">    Définit qui peut manipuler le contenu de la page-->
         <!--Les lignes pour le favicon-->
-        <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96"/>
-        <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg"/>
-        <link rel="shortcut icon" href="images/favicon/favicon.ico"/>
-        <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png"/>
-        <link rel="manifest" href="images/favicon/site.webmanifest"/>
+        <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg">
+        <link rel="shortcut icon" href="images/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+        <link rel="manifest" href="images/favicon/site.webmanifest">
         <!-- Protocole Open Graph (utilisé par Facebook, LinkedIn, Discord, WhatsApp...) -->
-        <meta property="og:title" content="">   <!-- Titre principal affiché sur l'aperçu -->
-        <meta property="og:description" content=""> <!-- Court résumé ou accroche sous le titre -->
-        <meta property="og:image" content="">   <!-- URL absolue de l'image miniature (ex: https://site.com/img.jpg) -->
-        <meta property="og:url" content=""> <!-- URL canonique officielle de la page partagée -->
+        <meta property="og:title" content="Société Royale Tir de Beloeil – Club de tir à Quevaucamps">   <!-- Titre principal affiché sur l'aperçu -->
+        <meta property="og:description" content="Stand de tir de Beloeil à Quevaucamps : tir sportif ouvert à tous, avec des moniteurs brevetés. Horaires, essai et inscription."> <!-- Court résumé ou accroche sous le titre -->
+        <meta property="og:image" content="https://maxencedelcourte.alwaysdata.net/index.html/projets/_projet-s.r.t.b/site-web/images/logo-srtb.png">   <!-- URL absolue de l'image miniature (ex: https://site.com/img.jpg) -->
+        <meta property="og:image:alt" content="Logo de la Société Royale Tir de Beloeil">
+        <meta property="og:url" content="https://maxencedelcourte.alwaysdata.net/index.html/projets/_projet-s.r.t.b/site-web/index.html"> <!-- URL canonique officielle de la page partagée -->
         <meta property="og:type" content="website"> <!-- Type d'entité (ex: website, article, video, profile) -->
+        <meta property="og:site_name" content="Société Royale Tir de Beloeil"> <!-- Nom du site web -->
         <!-- Métas pour Twitter / X Cards -->
         <meta name="twitter:card" content="summary">    <!-- Format d'affichage : petite carte (summary) ou grande bannière (summary_large_image) -->
-        <meta name="twitter:title" content="">  <!-- Titre spécifique pour X (prend le relais sur og:title) -->
-        <meta name="twitter:description" content="">    <!-- Description spécifique pour le flux X -->
-        <meta name="twitter:image" content="">  <!-- Image d'aperçu spécifique à X -->
-        <meta name="twitter:url" content="">    <!-- URL de la page pour le bot de X -->
+        <meta name="twitter:title" content="Société Royale Tir de Beloeil – Club de tir à Quevaucamps">  <!-- Titre spécifique pour X (prend le relais sur og:title) -->
+        <meta name="twitter:description" content="Stand de tir de Beloeil à Quevaucamps : tir sportif ouvert à tous, avec des moniteurs brevetés. Horaires, essai et inscription.">    <!-- Description spécifique pour le flux X -->
+        <meta name="twitter:image" content="https://maxencedelcourte.alwaysdata.net/index.html/projets/_projet-s.r.t.b/site-web/images/logo-srtb.png">  <!-- Image d'aperçu spécifique à X -->
+        <meta name="twitter:url" content="https://maxencedelcourte.alwaysdata.net/index.html/projets/_projet-s.r.t.b/site-web/index.html">    <!-- URL de la page pour le bot de X -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
-        <script>        <!-- sauvegarde la préférence darkmode/lightmode avant le chargement du .css pour ne pas "clignoter" -->
+        <!-- sauvegarde la préférence darkmode/lightmode avant le chargement du .css pour ne pas "clignoter" -->
+        <script>
             try {
             const t = localStorage.getItem('theme');
             if (t) document.documentElement.dataset.theme = t;
             } catch (e) {}
         </script>
         <link rel="stylesheet" href="pages/css/style.css"> <!-- Lien vers le fichier CSS -->
-        <title>SRTB-Accueil</title> <!--le titre de la page/onglet-->
+        <title>Accueil – SRTB, club de tir à Quevaucamps</title> <!--le titre de la page/onglet-->
     </head>
     <body>
-        <button id="theme-toggle" class="switch" role="switch" aria-checked="false" aria-label="Activer le thème sombre">Thème</button>
-        <button id="son-toggle" class="switch" role="switch" aria-checked="false" aria-label="Activer les effets sonores">Son</button>
+        <a class="evitement" href="#contenu">Aller au contenu principal</a>
+        <div class="reglages">
+            <span id="lbl-theme" class="etiquette">Thème</span>
+            <button id="theme-toggle" class="switch" role="switch" aria-checked="false" aria-labelledby="lbl-theme" type="button"></button>
+            <span id="lbl-son" class="etiquette">Son</span>
+            <button id="son-toggle" class="switch" role="switch" aria-checked="false" aria-labelledby="lbl-son" type="button"></button>
+        </div>
         <header>
             <nav>
-                <a href="#" class="link-logo">
-                    <img src="images/logo-srtb.png" alt="logo du club de tir S.R.T.Beloeil" class="logo" height="105vh" width="105vh">
-                </a>
+                <img src="images/logo-srtb.png" alt="logo du club de tir S.R.T.Beloeil" class="logo" height="105" width="105">
             </nav>
         </header>
-        <main>
+        <main id="contenu">
             <header class="main-header">
                 <h1>Accueil</h1>
             </header>
         </main>
         <footer>
-            Soci&eacute;t&eacute; Royale Tir de Beloeil a&#46s&#46b&#46l&#46
-            RPM Hainaut &vert; division Tournai
-            <a href="https://maps.app.goo.gl/xHq1YdTCRwqoHnNK8"><i class="fa-solid fa-location-dot"></i>41 rue F&eacute;n&egrave;que&comma; 7972 Quevaucamps</a>
-            <a href="mailto:info@srtb.be"><i class="fa-solid fa-envelope"></i>Renseignements par mail</a>
-            <a href="tel:0473433476"><i class="fa-solid fa-phone"></i>Secr&eacute;taire</a>
-            <a href="tel:0495535349"><i class="fa-solid fa-phone"></i>Pr&eacute;sident</a>
-            Nos réseaux sociaux&colon;<a href="https://www.instagram.com/srtbofficiel/"><i class="fa-brands fa-square-instagram"></i></a> &amp; <a href="https://www.facebook.com/profile.php?id=61576007305391"><i class="fa-brands fa-square-facebook"></i></a>
-            N&deg; d&acute;entreprise&colon; 0412 129 046
-            TVA&colon; BE 0412 129 046
-            Compte&colon; BE49 8002 0422 3171
-            Bic&colon; NICABEBB
-            Agr&eacute;&eacute; &agrave; l&acute;union Belge de Tir <a href="https://www.urstbf.org/">URSTB&ndash;f</a>
-            Notre politique de <a href="pages/html/politique-de-confidentialite.html">confidentialit&eacute;</a>
+            <div class="footer-grille">
+                <section class="footer-bloc">
+                    <h2>Le club</h2>
+                    <p>Société Royale Tir de Beloeil a.s.b.l.<br>RPM Hainaut | division Tournai</p>
+                    <p>Agréé à l’Union Belge de Tir <a href="https://www.urstbf.org/" target="_blank" rel="noopener noreferrer" aria-label="URSTB–f (s'ouvre dans un nouvel onglet)">URSTB–f</a></p>
+                </section>
+                <section class="footer-bloc">
+                    <h2>Contact</h2>
+                    <address>
+                        <ul class="liste-ligne">
+                            <li><a href="https://maps.app.goo.gl/xHq1YdTCRwqoHnNK8" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>41 rue Fénèque, 7972 Quevaucamps<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a></li>
+                            <li><a href="mailto:info@srtb.be"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Renseignements par mail</a></li>
+                            <li><a href="tel:0495535349"><i class="fa-solid fa-phone" aria-hidden="true"></i>Secrétaire</a></li>
+                            <li><a href="tel:0473433476"><i class="fa-solid fa-phone" aria-hidden="true"></i>Président</a></li>
+                        </ul>
+                    </address>
+                </section>
+                <section class="footer-bloc">
+                    <h2>Nos réseaux</h2>
+                    <ul class="liste-ligne">
+                        <li><a href="https://www.instagram.com/srtbofficiel/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-instagram" aria-hidden="true"></i>Instagram<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=61576007305391" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-facebook" aria-hidden="true"></i>Facebook<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a></li>
+                    </ul>
+                </section>
+                <section class="footer-bloc">
+                    <h2>Informations légales</h2>
+                    <p class="infos-legales">N° d’entreprise : 0412 129 046<br>
+                    TVA : BE 0412 129 046<br>
+                    Compte : BE49 8002 0422 3171<br>
+                    BIC : NICABEBB</p>
+                    <p>
+                        <a href="pages/html/politique-de-confidentialite.html"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i>Politique de confidentialité</a>
+                    </p>
+                </section>
+            </div>
+            <div class="footer-bas">
+                <p>&copy; 2026 Société Royale Tir de Beloeil a.s.b.l.<br>Tous droits réservés.</p>
+                <p>&#127279; FreeStyle6695 à la réa, Copyleft.<br>Tous droits renversés.</p>
+            </div>
         </footer>
         <script>
             const root = document.documentElement;
             const btn = document.getElementById('theme-toggle');
             const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
-            
             function currentTheme() {
                 return root.dataset.theme || (systemDark.matches ? 'dark' : 'light');
             }
-            
             function applyTheme(theme) {
                 root.dataset.theme = theme;
                 btn.setAttribute('aria-checked', theme === 'dark');
             }
-            
             // État initial du bouton (choix mémorisé ou réglage du système)
             applyTheme(currentTheme());
-            
             btn.addEventListener('click', () => {
                 const next = currentTheme() === 'dark' ? 'light' : 'dark';
                 applyTheme(next);
@@ -97,45 +125,34 @@
             sonTir.volume  = 1;
             sonArme.preload = 'auto';
             sonTir.preload  = 'auto';
-
             let sonActif = false;
             try { sonActif = localStorage.getItem('son') === 'on'; } catch (e) {}
-
             const sonBtn = document.getElementById('son-toggle');
             sonBtn.setAttribute('aria-checked', sonActif);
-
             sonBtn.addEventListener('click', () => {
                 sonActif = !sonActif;
                 sonBtn.setAttribute('aria-checked', sonActif);
                 try { localStorage.setItem('son', sonActif ? 'on' : 'off'); } catch (e) {}
                 jouer(sonArme);   /* petit aperçu à l'activation */
             });
-
             function jouer(audio) {
                 if (!sonActif) return;
                 audio.currentTime = 0;
                 audio.play().catch(() => {});
             }
-
             document.querySelectorAll('footer a').forEach(lien => {
-
                 /* Survol (souris) ou focus clavier : armement */
                 lien.addEventListener('mouseenter', () => {
                     if (window.matchMedia('(hover: hover)').matches) jouer(sonArme);
                 });
                 lien.addEventListener('focus', () => jouer(sonArme));
-
                 /* Clic : détonation, puis navigation */
                 lien.addEventListener('click', (e) => {
                     if (!sonActif) return;
-
                     jouer(sonTir);
-
                     /* Ctrl/Cmd/Maj/clic molette, ou nouvel onglet : on laisse faire le navigateur */
-                    const nouvelOnglet = e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0
-                                    || lien.target === '_blank';
+                    const nouvelOnglet = e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0 || lien.target === '_blank';
                     if (nouvelOnglet) return;
-
                     e.preventDefault();
                     setTimeout(() => { window.location.href = lien.href; }, 750);
                 });
