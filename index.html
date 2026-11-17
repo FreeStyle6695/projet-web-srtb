@@ -32,11 +32,13 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
         <!-- sauvegarde la préférence darkmode/lightmode avant le chargement du .css pour ne pas "clignoter" -->
         <script>
+            document.documentElement.classList.add('js');
             try {
             const t = localStorage.getItem('theme');
             if (t) document.documentElement.dataset.theme = t;
             } catch (e) {}
         </script>
+
         <link rel="stylesheet" href="pages/css/style.css"> <!-- Lien vers le fichier CSS -->
         <title>Accueil – SRTB, club de tir à Quevaucamps</title> <!--le titre de la page/onglet-->
     </head>
@@ -49,8 +51,42 @@
             <button id="son-toggle" class="switch" role="switch" aria-checked="false" aria-labelledby="lbl-son" type="button"></button>
         </div>
         <header>
-            <nav>
-                <img src="images/logo-srtb.png" alt="logo du club de tir S.R.T.Beloeil" class="logo" height="105" width="105">
+            <div class="background-logo">
+                <img src="images/logo-srtb.png" alt="logo du club de tir S.R.T.Beloeil" class="logo" height="512" width="512">
+            </div>
+            <nav class="menu-barre" aria-label="Navigation principale">
+                <button type="button" id="menu-bouton" class="menu-bouton" aria-expanded="false" aria-controls="menu">Menu</button>
+                <ul id="menu" class="menu">
+                    <li><span aria-current="page">Accueil</span></li>
+                    <li>
+                        <details class="sous-menu" name="menu-principal">
+                            <summary>Staff et club</summary>
+                            <ul>
+                                <li><a href="pages/html/staff-et-club.html">Vue d'ensemble</a></li>
+                                <li><a href="pages/html/histoire.html">Histoire du club</a></li>
+                                <li><a href="pages/html/visite.html">Visite des installations</a></li>
+                                <li><a href="pages/html/conseil-administration.html">Conseil d'administration</a></li>
+                                <li><a href="pages/html/moniteurs-coachs.html">Moniteurs et coachs LTS</a></li>
+                                <li><a href="pages/html/verificateurs.html">Vérificateurs agréés URSTB-f</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li><a href="pages/html/section-lts.html">Section LTS</a></li>
+                    <li><a href="pages/html/ecole-des-jeunes.html">École des jeunes</a></li>                        
+                    <li><a href="pages/html/agenda.html">Agenda</a></li>
+                    <li>
+                        <details class="sous-menu" name="menu-principal">
+                            <summary>Documentations</summary>
+                            <ul>
+                                <li><a href="pages/html/documentations.html">Vue d'ensemble</a></li>
+                                <li><a href="pages/html/srtb.html">S.R.T.B.</a></li>
+                                <li><a href="pages/html/lts.html">L.T.S.</a></li>
+                                <li><a href="pages/html/competitions-disciplines.html">Compétitions — Liste des disciplines</a></li>
+                                <li><a href="pages/html/competitions-regles-carabine.html">Compétitions — Règles I.S.S.F. Carabine</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
             </nav>
         </header>
         <main id="contenu">
@@ -100,6 +136,16 @@
             </div>
         </footer>
         <script>
+            const menuBtn = document.getElementById('menu-bouton');
+            const menu = document.getElementById('menu');
+            menuBtn.addEventListener('click', () => {
+                const ouvert = menuBtn.getAttribute('aria-expanded') === 'true';
+                menuBtn.setAttribute('aria-expanded', String(!ouvert));
+            });
+
+
+
+
             const root = document.documentElement;
             const btn = document.getElementById('theme-toggle');
             const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
@@ -117,8 +163,12 @@
                 applyTheme(next);
                 try { localStorage.setItem('theme', next); } catch (e) {}
             });
-        </script>
-        <script>
+
+
+
+
+
+
             const sonArme = new Audio('sounds/169195__paul368__berretta-9m-cocking-double-fast-louder.mp3');
             const sonTir  = new Audio('sounds/330634__elliotlp__desert-eagle-gunshot-louder.mp3');
             sonArme.volume = 1;
