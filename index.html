@@ -91,8 +91,44 @@
         </header>
         <main id="contenu">
             <header class="main-header">
-                <h1>Accueil</h1>
+                <h1>Société Royale Tir de Beloeil</h1>
             </header>
+            <div class="accueil-grille">
+                <section class="carte">
+                    <h2>Qui sommes-nous ?</h2>
+                    <p>
+                        Le S.R.T.B. est un club de tir sportif installé à Quevaucamps, ouvert à tous,
+                        adultes comme jeunes. Fondé en 1971, il a reçu le titre de « Société Royale » en 2023.
+                        Les débutants y sont accompagnés par des moniteurs ADEPS et des coachs LTS.
+                    </p>
+                </section>
+                <section class="carte">
+                    <h2>Quand venir ?</h2>
+                    <h3>Tir</h3>
+                    <dl class="horaires">
+                        <dt>Jeudi et vendredi</dt>
+                        <dd>de 16 h à 19 h</dd>
+                        <dt>Samedi</dt>
+                        <dd>de 13 h à 19 h (école des jeunes le matin, de 9 h à 12 h)</dd>
+                        <dt>Dimanche</dt>
+                        <dd>de 9 h à 12 h</dd>
+                    </dl>
+                    <h3>Secrétariat</h3>
+                    <dl class="horaires">
+                        <dt>Jeudi et vendredi</dt>
+                        <dd>de 15 h à 17 h 45</dd>
+                        <dt>Samedi</dt>
+                        <dd>de 16 h à 17 h 30</dd>
+                        <dt>Dimanche</dt>
+                        <dd>de 8 h 30 à 10 h 15</dd>
+                    </dl>
+                </section>
+                <section class="carte carte-large">
+                    <h2>Où nous trouver ?</h2>
+                    <address>41 rue Fénèque, 7972 Quevaucamps</address>
+                    <iframe title="Carte : emplacement du club de tir SRTB à Quevaucamps" src="https://www.google.com/maps?q=41+rue+F%C3%A9n%C3%A8que,+7972+Quevaucamps&amp;output=embed" width="800" height="450"></iframe>
+                </section>
+            </div>
         </main>
         <footer>
             <div class="footer-grille">
@@ -142,10 +178,6 @@
                 const ouvert = menuBtn.getAttribute('aria-expanded') === 'true';
                 menuBtn.setAttribute('aria-expanded', String(!ouvert));
             });
-
-
-
-
             const root = document.documentElement;
             const btn = document.getElementById('theme-toggle');
             const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
@@ -163,12 +195,6 @@
                 applyTheme(next);
                 try { localStorage.setItem('theme', next); } catch (e) {}
             });
-
-
-
-
-
-
             const sonArme = new Audio('sounds/169195__paul368__berretta-9m-cocking-double-fast-louder.mp3');
             const sonTir  = new Audio('sounds/330634__elliotlp__desert-eagle-gunshot-louder.mp3');
             sonArme.volume = 1;

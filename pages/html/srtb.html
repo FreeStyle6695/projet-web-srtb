@@ -10,11 +10,11 @@
         <meta name="robots" content="index, follow">    <!--référencer la page + suivre les liens-->
         <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-*******************'; connect-src 'self' ws://127.0.0.1:5500 ws://localhost:5500; img-src 'self'; style-src 'self';">    Définit qui peut manipuler le contenu de la page-->
         <!--Les lignes pour le favicon-->
-        <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96">
-        <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg">
-        <link rel="shortcut icon" href="images/favicon/favicon.ico">
-        <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
-        <link rel="manifest" href="images/favicon/site.webmanifest">
+        <link rel="icon" type="image/png" href="../../images/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/svg+xml" href="../../images/favicon/favicon.svg">
+        <link rel="shortcut icon" href="../../images/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png">
+        <link rel="manifest" href="../../images/favicon/site.webmanifest">
         <!-- Protocole Open Graph (utilisé par Facebook, LinkedIn, Discord, WhatsApp...) -->
         <meta property="og:title" content="Société Royale Tir de Beloeil – Club de tir à Quevaucamps">   <!-- Titre principal affiché sur l'aperçu -->
         <meta property="og:description" content="Stand de tir de Beloeil à Quevaucamps : tir sportif ouvert à tous, avec des moniteurs brevetés. Horaires, essai et inscription."> <!-- Court résumé ou accroche sous le titre -->
@@ -41,7 +41,7 @@
         <a class="evitement" href="#contenu">Aller au contenu principal</a>
         <header>
             <div class="background-logo">
-                <img src="../../images/logo-srtb.png" alt="logo du club de tir S.R.T.Beloeil" class="logo" height="512" width="512">
+                <a href="../../index.html"><img src="../../images/logo-srtb.png" alt="logo du club de tir S.R.T.Beloeil" class="logo" height="512" width="512"></a>
             </div>
             <nav class="menu-barre" aria-label="Navigation principale">
                 <button type="button" id="menu-bouton" class="menu-bouton" aria-expanded="false" aria-controls="menu">Menu</button>
@@ -82,6 +82,33 @@
             <header class="main-header">
                 <h1>S.R.T.B.</h1>
             </header>
+            <section>
+                <h2>Documents officiels du club</h2>
+                <p>inscription, statuts, règlement d’ordre intérieur et contre-indications. Chaque document s’ouvre dans un nouvel onglet ; ton navigateur te propose ensuite de le télécharger.</p>
+                <ul class="documents">
+                    <li class="documents-entete" aria-hidden="true"><span>Document</span><span>Description</span><span>Consultation</span></li>
+                    <li>
+                        <span class="doc-nom">Formulaire d’inscription</span>
+                        <span class="doc-desc">Formulaire d’inscription au SRTB</span>
+                        <a class="doc-lien" href="../../documents/Formulaire-affiliation.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i>Ouvrir<span class="sr-only"> Formulaire d’inscription – Formulaire d’inscription au SRTB (PDF, s'ouvre dans un nouvel onglet)</span></a>
+                    </li>
+                    <li>
+                        <span class="doc-nom">Statuts du SRTB</span>
+                        <span class="doc-desc">Statuts officiels du SRTB</span>
+                        <a class="doc-lien" href="../../documents/Statuts-definitifs-20260329.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i>Ouvrir<span class="sr-only"> Statuts du SRTB – Statuts officiels du SRTB (PDF, s'ouvre dans un nouvel onglet)</span></a>
+                    </li>
+                    <li>
+                        <span class="doc-nom">ROI</span>
+                        <span class="doc-desc">Règlement d’ordre intérieur – version 2026</span>
+                        <a class="doc-lien" href="../../documents/ROI-definitif-20260329-signe.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i>Ouvrir<span class="sr-only"> ROI – Règlement d’ordre intérieur – version 2026 (PDF, s'ouvre dans un nouvel onglet)</span></a>
+                    </li>
+                    <li>
+                        <span class="doc-nom">Contre-indications à la pratique du tir</span>
+                        <span class="doc-desc">Relevé des recommandations générales et contre-indications</span>
+                        <a class="doc-lien" href="../../documents/Contre_indications_generales_affiliation_2013.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i>Ouvrir<span class="sr-only"> Contre-indications à la pratique du tir – Relevé des recommandations générales et contre-indications (PDF, s'ouvre dans un nouvel onglet)</span></a>
+                    </li>
+                </ul>
+            </section>
         </main>
         <footer>
             <div class="footer-grille">
